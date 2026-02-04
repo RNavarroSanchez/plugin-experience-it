@@ -1,0 +1,40 @@
+.ula-search-form {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.ula-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+}
+
+.ula-field label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.ula-actions {
+    margin-top: 4px;
+}
+
+.ula-table td,
+.ula-table th {
+    vertical-align: middle;
+}
+
+.ula-pagination {
+    margin-top: 12px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.ula-pagination .button.is-active {
+    background: #1d2327;
+    color: #fff;
+    border-color: #1d2327;
+}

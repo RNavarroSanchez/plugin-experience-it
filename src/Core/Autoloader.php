@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Autoloader Manual (Simula Composer PSR-4)
+ */
+
+namespace ULA\Core;
+
+class Autoloader
+{
+    public static function register(): void
+    {
+        spl_autoload_register([__CLASS__, 'autoload']);
+    }
+
+    public static function autoload(string $class): void
+    {
+        $prefix = 'ULA\\';
+        $base_dir = ULA_PATH . 'src/';
+
+        $len = strlen($prefix);
+        if (strncmp($prefix, $class, $len) !== 0) {
+            return;
+        }
+
+        $relative_class = substr($class, $len);
+        $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+        if (file_exists($file)) {
+            require_once $file;
+        }
+    }
+}
